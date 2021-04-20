@@ -6,7 +6,7 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 00:30:20 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/20 00:32:55 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/04/20 19:52:22 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ private:
 	std::string	type;
 public:
 	Zombie(std::string name, std::string type);
-	~Zombie();
-	void	announce();
+	~Zombie(void);
+	void	announce(void);
 };
 
 #endif

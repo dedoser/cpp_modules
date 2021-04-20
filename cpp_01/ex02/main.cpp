@@ -6,13 +6,13 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 00:47:02 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/20 00:51:38 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/04/20 19:53:05 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
 
-int main()
+int main(void)
 {
 	ZombieEvent	event;
 	Zombie		*zombie1;

@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 23:31:54 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/20 19:52:22 by fignigno         ###   ########.fr       */
+/*   Created: 2021/04/20 19:39:56 by fignigno          #+#    #+#             */
+/*   Updated: 2021/04/20 19:51:48 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-#define PONY_HPP
+#ifndef ZOMBIEHORDE_HPP
+#define ZOMBIEHORDE_HPP
 
-#include <string>
-#include <iostream>
+#include "Zombie.hpp"
 
-class Pony
+class ZombieHorde
 {
 private:
-	int	Age;
-	std::string Name;
-	std::string Color;
+	Zombie	*horde;
+	int		n;
 public:
-	Pony(std::string name, std::string color, int age);
-	~Pony(void);
-	std::string	GetName(void);
-	int			GetAge(void);
-	std::string	GetColor(void);
+	ZombieHorde(int n);
+	~ZombieHorde(void);
+	void	announce(void);
 };
 
 #endif

@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 23:31:54 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/20 19:52:22 by fignigno         ###   ########.fr       */
+/*   Created: 2021/04/20 21:56:27 by fignigno          #+#    #+#             */
+/*   Updated: 2021/04/20 22:00:12 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-#define PONY_HPP
+#include "HumanA.hpp"
 
-#include <string>
-#include <iostream>
-
-class Pony
+HumanA::HumanA(std::string name, Weapon weapon)
 {
-private:
-	int	Age;
-	std::string Name;
-	std::string Color;
-public:
-	Pony(std::string name, std::string color, int age);
-	~Pony(void);
-	std::string	GetName(void);
-	int			GetAge(void);
-	std::string	GetColor(void);
-};
+	this->name = name;
+	this->weapon = weapon;
+}
 
-#endif
+void	HumanA::attack()
+{
+	std::cout << this->name << " attacks with his " << this->weapon.getType() << std::endl;
+}
+
+HumanA::~HumanA()
+{
+}

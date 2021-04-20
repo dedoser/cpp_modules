@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   human.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 23:31:54 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/20 19:52:22 by fignigno         ###   ########.fr       */
+/*   Created: 2021/04/20 20:45:51 by fignigno          #+#    #+#             */
+/*   Updated: 2021/04/20 20:55:32 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-#define PONY_HPP
+#include "Human.hpp"
 
-#include <string>
-#include <iostream>
-
-class Pony
+Human::Human()
 {
-private:
-	int	Age;
-	std::string Name;
-	std::string Color;
-public:
-	Pony(std::string name, std::string color, int age);
-	~Pony(void);
-	std::string	GetName(void);
-	int			GetAge(void);
-	std::string	GetColor(void);
-};
+}
 
-#endif
+std::string	Human::identify()
+{
+	return (this->brain.identify());
+}
+
+Brain	&Human::getBrain()
+{
+	return (this->brain);
+}
+
+Human::~Human()
+{
+}

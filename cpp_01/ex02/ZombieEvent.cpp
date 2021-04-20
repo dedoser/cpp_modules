@@ -6,7 +6,7 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 00:39:09 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/20 00:48:56 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/04/20 19:53:14 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Zombie	*ZombieEvent::newZombie(std::string name)
 	return (new Zombie(name, this->type));
 }
 
-Zombie	*ZombieEvent::randomChump()
+Zombie	*ZombieEvent::randomChump(void)
 {
 	std::string	name(10, '\0');
 
@@ -32,10 +32,10 @@ Zombie	*ZombieEvent::randomChump()
 	return (this->newZombie(name));
 }
 
-ZombieEvent::ZombieEvent()
+ZombieEvent::ZombieEvent(void)
 {
 }
 
-ZombieEvent::~ZombieEvent()
+ZombieEvent::~ZombieEvent(void)
 {
 }

@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 23:31:54 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/20 19:52:22 by fignigno         ###   ########.fr       */
+/*   Created: 2021/04/20 20:38:57 by fignigno          #+#    #+#             */
+/*   Updated: 2021/04/20 20:54:09 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-#define PONY_HPP
+#include "Brain.hpp"
 
-#include <string>
-#include <iostream>
-
-class Pony
+Brain::Brain()
 {
-private:
-	int	Age;
-	std::string Name;
-	std::string Color;
-public:
-	Pony(std::string name, std::string color, int age);
-	~Pony(void);
-	std::string	GetName(void);
-	int			GetAge(void);
-	std::string	GetColor(void);
-};
+	this->size = 1;
+}
 
-#endif
+std::string	Brain::identify()
+{
+	std::stringstream	ss;
+	std::string			address;
+
+	ss << this;
+	ss >> address;
+	return (address);
+}
+
+Brain::~Brain()
+{
+}
