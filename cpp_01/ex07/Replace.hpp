@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/20 21:53:22 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/21 14:32:38 by fignigno         ###   ########.fr       */
+/*   Created: 2021/04/21 15:01:07 by fignigno          #+#    #+#             */
+/*   Updated: 2021/04/21 15:08:59 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
-#include "Weapon.hpp"
+#ifndef REPLACE_HPP
+#define REPLACE_HPP
 
-class HumanA
+#include <string>
+#include <fstream>
+#include <iostream>
+
+class Replace
 {
 private:
-	Weapon		&weapon;
-	std::string	name;
+	std::string		s1, s2;
+	std::ofstream	out;
+	std::ifstream	file;
+	bool			is_ok;
 public:
-	HumanA(std::string name, Weapon &weapon);
-	~HumanA();
-	void	attack();
+	Replace(char **argv, int argc);
+	~Replace();
+	void	changeStringInFile();
 };
+
+#endif

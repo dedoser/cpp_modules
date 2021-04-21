@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/20 21:53:22 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/21 14:32:38 by fignigno         ###   ########.fr       */
+/*   Created: 2021/04/21 14:36:23 by fignigno          #+#    #+#             */
+/*   Updated: 2021/04/21 15:38:57 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include <iostream>
-#include "Weapon.hpp"
+#include <fstream>
+#include <string>
 
-class HumanA
+#include "Replace.hpp"
+
+int main(int argc, char **argv)
 {
-private:
-	Weapon		&weapon;
-	std::string	name;
-public:
-	HumanA(std::string name, Weapon &weapon);
-	~HumanA();
-	void	attack();
-};
+	Replace	rep(argv, argc);
+	rep.changeStringInFile();
+	return (0);
+}

@@ -6,16 +6,15 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 21:56:27 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/20 22:00:12 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/04/21 14:33:35 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon weapon)
+HumanA::HumanA(std::string name, Weapon &weapon) :
+	weapon(weapon), name(name)
 {
-	this->name = name;
-	this->weapon = weapon;
 }
 
 void	HumanA::attack()
