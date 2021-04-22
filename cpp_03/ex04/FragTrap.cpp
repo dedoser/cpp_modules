@@ -6,26 +6,24 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 00:31:12 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/22 18:05:21 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/04/22 21:09:32 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include <iostream>
 #include <ctime>
+#include <cstdlib>
 
 FragTrap::FragTrap(const std::string &name)
 {
-	std::cout << "Let's get this party started!\n"
+	std::cout << "FragTrap is created\n"
 			<< "My name is " << name << std::endl;
 	this->HP = 100;
 	this->maxHP = 100;
-	this->energy = 100;
-	this->MaxEnergy = 100;
 	this->level = 1;
 	this->name = name;
 	this->rangedDmg = 20;
-	this->meleeDmg = 30;
 	this->armor = 5;
 }
 
@@ -108,5 +106,5 @@ void	FragTrap::vaulthunter_dot_exe(const std::string &target)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "I'll die the way I lived: annoying!\n";
+	std::cout << "FragTrap's death\n";
 }

@@ -1,23 +1,23 @@
-/* ************************************************************************** */
+																								/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 00:27:50 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/22 16:09:46 by fignigno         ###   ########.fr       */
+/*   Created: 2021/04/22 16:16:06 by fignigno          #+#    #+#             */
+/*   Updated: 2021/04/22 16:47:06 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <string>
 
-class FragTrap
+class ClapTrap
 {
-private:
+protected:
 	unsigned int	HP;
 	unsigned int	maxHP;
 	unsigned int	energy;
@@ -28,15 +28,15 @@ private:
 	unsigned int	rangedDmg;
 	unsigned int	armor;
 public:
-	FragTrap(const std::string &name);
-	FragTrap(const FragTrap &obj);
-	~FragTrap();
-	FragTrap	&operator=(const FragTrap &right);
+	ClapTrap();
+	ClapTrap(const std::string &name);
+	ClapTrap(const ClapTrap &obj);
+	~ClapTrap();
+	ClapTrap	&operator=(const ClapTrap &right);
 	void	rangedAttack(const std::string &target);
 	void	meleeAttack(const std::string &target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
-	void	vaulthunter_dot_exe(const std::string &target);
 };
 
 #endif

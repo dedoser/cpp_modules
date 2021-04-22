@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 00:31:12 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/22 18:05:21 by fignigno         ###   ########.fr       */
+/*   Created: 2021/04/22 16:30:30 by fignigno          #+#    #+#             */
+/*   Updated: 2021/04/22 18:02:08 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 #include <iostream>
-#include <ctime>
 
-FragTrap::FragTrap(const std::string &name)
+ClapTrap::ClapTrap()
 {
-	std::cout << "Let's get this party started!\n"
+	std::cout << "...LOADING...CL4P_TP was created\n";
+}
+
+ClapTrap::ClapTrap(const std::string &name)
+{
+	std::cout << "...LOADING...CL4P_TP was created\n"
 			<< "My name is " << name << std::endl;
 	this->HP = 100;
 	this->maxHP = 100;
@@ -24,17 +28,17 @@ FragTrap::FragTrap(const std::string &name)
 	this->MaxEnergy = 100;
 	this->level = 1;
 	this->name = name;
-	this->rangedDmg = 20;
-	this->meleeDmg = 30;
-	this->armor = 5;
+	this->rangedDmg = 0;
+	this->meleeDmg = 0;
+	this->armor = 0;
 }
 
-FragTrap::FragTrap(const FragTrap &obj)
+ClapTrap::ClapTrap(const ClapTrap &obj)
 {
 	*this = obj;
 }
 
-FragTrap	&FragTrap::operator=(const FragTrap &right)
+ClapTrap	&ClapTrap::operator=(const ClapTrap &right)
 {
 	this->HP = right.HP;
 	this->maxHP = right.maxHP;
@@ -48,23 +52,23 @@ FragTrap	&FragTrap::operator=(const FragTrap &right)
 	return (*this);
 }
 
-void	FragTrap::rangedAttack(const std::string &target)
+void	ClapTrap::rangedAttack(const std::string &target)
 {
-	std::cout << "FR4G-TP " << this->name << " attacks " << target
+	std::cout << "CL4P-TP " << this->name << " attacks " << target
 			<< " at range, causing " << this->rangedDmg << " points of damage!\n";
 }
 
-void	FragTrap::meleeAttack(const std::string &target)
+void	ClapTrap::meleeAttack(const std::string &target)
 {
-	std::cout << "FR4G-TP " << this->name << " attacks " << target
+	std::cout << "CL4P-TP " << this->name << " attacks " << target
 			<< " at melee, causing " << this->meleeDmg << " points of damage!\n";
 }
 
-void	FragTrap::takeDamage(unsigned int amount)
+void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->HP == 0)
 	{
-		std::cout << "Oh yeah? Well, uh... yeah.\n";
+		std::cout << "I am already dead\n";
 		return ;
 	}
 	if (amount < this->armor)
@@ -75,38 +79,25 @@ void	FragTrap::takeDamage(unsigned int amount)
 		this->HP = 0;
 	else
 		this->HP -= amount;
-	std::cout << "Come back here! I'll gnaw your legs off! "
+	std::cout << "Why are you doing this? "
 				<< "Health = " << this->HP << std::endl;
 }
 
-void	FragTrap::beRepaired(unsigned int amount)
+void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->HP == this->maxHP)
 	{
-		std::cout << "Health! Eww, what flavor is red?\n";
+		std::cout << "I am already healthy\n";
 		return ;
 	}
 	if (amount + this->HP > this->maxHP)
 		this->HP = this->maxHP;
 	else
 		this->HP += amount;
-	std::cout << "I found health! Now it's " << this->HP << std::endl;
+	std::cout << "Thanks! My health is " << this->HP << std::endl;
 }
 
-void	FragTrap::vaulthunter_dot_exe(const std::string &target)
+ClapTrap::~ClapTrap()
 {
-	std::string	pool[5] = {"This time it'll be awesome, I promise, ", "It's about to get magical, ",
-						"What will he do next, ", "Don't tell me that wasn't awesome, ", "Place your bets, "};
-	if (this->energy - 25 < 0)
-	{
-		std::cout << "Where'd all my bullets go?\n";
-		return ;
-	}
-	this->energy -= 25;
-	std::cout << pool[rand() % 5] << target << std::endl;
-}
-
-FragTrap::~FragTrap()
-{
-	std::cout << "I'll die the way I lived: annoying!\n";
+	std::cout << "CL4P_TP was destroyed. BYE...\n";
 }

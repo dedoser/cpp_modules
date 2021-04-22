@@ -6,13 +6,14 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 00:31:12 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/22 18:05:21 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/04/22 18:05:14 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include <iostream>
 #include <ctime>
+#include <cstdlib>
 
 FragTrap::FragTrap(const std::string &name)
 {
