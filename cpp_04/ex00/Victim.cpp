@@ -6,17 +6,28 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 21:37:11 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/22 21:42:09 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/04/23 22:04:28 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Victim.hpp"
 #include <iostream>
 
+Victim::Victim() :
+	name("")
+{
+	std::cout << "Some random victim without name just appeared!\n";
+}
+
 Victim::Victim(const std::string &name) :
 	name(name)
 {
 	std::cout << "Some random victim called " << this->name << " just appeared!\n";
+}
+
+Victim::Victim(const Victim &obj)
+{
+	*this = obj;
 }
 
 Victim::~Victim()
@@ -32,6 +43,12 @@ const std::string	&Victim::getName() const
 void	Victim::getPolymorphed() const
 {
 	std::cout << this->name << " has been turned into a cute little sheep!\n";
+}
+
+Victim	&Victim::operator=(const Victim &right)
+{
+	this->name = right.name;
+	return (*this);
 }
 
 std::ostream	&operator<<(std::ostream &out, const Victim &vic)

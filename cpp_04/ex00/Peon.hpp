@@ -6,7 +6,7 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 21:44:44 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/22 21:49:04 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/04/23 22:05:57 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Peon : public Victim
 {
 public:
 	Peon(const std::string &name);
-	~Peon();
+	virtual ~Peon();
 	virtual void	getPolymorphed() const;
 };
 
