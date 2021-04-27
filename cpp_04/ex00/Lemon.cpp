@@ -1,39 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PlasmaRifle.cpp                                    :+:      :+:    :+:   */
+/*   Lemon.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/23 17:18:13 by fignigno          #+#    #+#             */
+/*   Created: 2021/04/24 00:33:34 by fignigno          #+#    #+#             */
 /*   Updated: 2021/04/24 02:45:28 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PlasmaRifle.hpp"
+#include "Lemon.hpp"
 #include <iostream>
 
-PlasmaRifle::PlasmaRifle() :
-	AWeapon("Plasma Rifle", 5, 21)
+Lemon::Lemon() :
+	Victim()
+{
+	std::cout << "Squish\n";
+}
+
+Lemon::Lemon(const std::string &name) :
+	Victim(name)
+{
+	std::cout << "SQUIIIISH\n";
+}
+
+Lemon::Lemon(const Lemon &obj)
+{
+	*this = obj;
+}
+
+Lemon::~Lemon()
 {
 }
 
-PlasmaRifle::PlasmaRifle(const PlasmaRifle &obj) :
-	AWeapon(obj)
+Lemon		&Lemon::operator=(const Lemon &right)
 {
-}
-
-PlasmaRifle	&PlasmaRifle::operator=(const PlasmaRifle &right)
-{
-	AWeapon::operator=(right);
+	this->Victim::operator=(right);
 	return (*this);
 }
 
-PlasmaRifle::~PlasmaRifle()
+void		Lemon::getPolymorphed() const
 {
-}
-
-void	PlasmaRifle::attack() const
-{
-	std::cout << "* piouuu piouuu piouuu *\n";
+	std::cout << this->getName() << " has been turned into a strawberry!\n";
 }

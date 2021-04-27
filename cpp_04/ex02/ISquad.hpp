@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PlasmaRifle.cpp                                    :+:      :+:    :+:   */
+/*   ISquad.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/23 17:18:13 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/24 02:45:28 by fignigno         ###   ########.fr       */
+/*   Created: 2021/04/24 00:54:55 by fignigno          #+#    #+#             */
+/*   Updated: 2021/04/24 00:57:59 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PlasmaRifle.hpp"
-#include <iostream>
+#ifndef ISQUAD_HPP
+#define ISQUAD_HPP
 
-PlasmaRifle::PlasmaRifle() :
-	AWeapon("Plasma Rifle", 5, 21)
-{
-}
+#include "ISpaceMarine.hpp"
 
-PlasmaRifle::PlasmaRifle(const PlasmaRifle &obj) :
-	AWeapon(obj)
+class ISquad
 {
-}
+public:
+	virtual ~ISquad() {}
+	virtual int				getCount() const = 0;
+	virtual ISpaceMarine	*getUnit(int num) const = 0;
+	virtual int				push(ISpaceMarine *marine) = 0;
+};
 
-PlasmaRifle	&PlasmaRifle::operator=(const PlasmaRifle &right)
-{
-	AWeapon::operator=(right);
-	return (*this);
-}
-
-PlasmaRifle::~PlasmaRifle()
-{
-}
-
-void	PlasmaRifle::attack() const
-{
-	std::cout << "* piouuu piouuu piouuu *\n";
-}
+#endif

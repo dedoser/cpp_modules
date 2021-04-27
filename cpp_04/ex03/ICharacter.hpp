@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PlasmaRifle.cpp                                    :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/23 17:18:13 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/24 02:45:28 by fignigno         ###   ########.fr       */
+/*   Created: 2021/04/26 01:00:07 by fignigno          #+#    #+#             */
+/*   Updated: 2021/04/26 01:02:39 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PlasmaRifle.hpp"
-#include <iostream>
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
 
-PlasmaRifle::PlasmaRifle() :
-	AWeapon("Plasma Rifle", 5, 21)
-{
-}
+#include <string>
+#include "AMateria.hpp"
 
-PlasmaRifle::PlasmaRifle(const PlasmaRifle &obj) :
-	AWeapon(obj)
+class ICharacter
 {
-}
+public:
+	virtual ~ICharacter();
+	virtual const std::string	&getName() const;
+	virtual void				equip(AMateria *m) = 0;
+	virtual void				unequip(int idx) = 0;
+	virtual void				use(int idx, ICharacter &target) = 0;
+};
 
-PlasmaRifle	&PlasmaRifle::operator=(const PlasmaRifle &right)
-{
-	AWeapon::operator=(right);
-	return (*this);
-}
-
-PlasmaRifle::~PlasmaRifle()
-{
-}
-
-void	PlasmaRifle::attack() const
-{
-	std::cout << "* piouuu piouuu piouuu *\n";
-}
+#endif

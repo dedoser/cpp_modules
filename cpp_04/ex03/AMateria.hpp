@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 21:44:44 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/24 00:31:10 by fignigno         ###   ########.fr       */
+/*   Created: 2021/04/26 00:56:09 by fignigno          #+#    #+#             */
+/*   Updated: 2021/04/26 01:02:51 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-#define PEON_HPP
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
 
-#include "Victim.hpp"
 #include <string>
+#include "ICharacter.hpp"
 
-class Peon : public Victim
+class AMateria
 {
+private:
+	std::string		type;
+	unsigned int	xp;
 public:
-	Peon();
-	Peon(const std::string &name);
-	Peon(const Peon &obj);
-	virtual ~Peon();
-	Peon			&operator=(const Peon &right);
-	virtual void	getPolymorphed() const;
+	AMateria(const std::string &type);
+	AMateria(const AMateria &obj);
+	virtual ~AMateria();
+	const std::string	&getType() const;
+	unsigned int		getXP() const;
+	virtual AMateria	&clone() const = 0;
+	virtual void		use(ICharacter &target);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 18:04:45 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/23 18:14:40 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/04/24 00:52:01 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ private:
 	int			hp;
 	std::string	type;
 public:
+	Enemy();
 	Enemy(int hp, const std::string &type);
 	Enemy(const Enemy &obj);
 	virtual ~Enemy();

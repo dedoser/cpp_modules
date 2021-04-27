@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   AssaultTerminator.hpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/22 21:44:44 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/24 00:31:10 by fignigno         ###   ########.fr       */
+/*   Created: 2021/04/24 02:32:15 by fignigno          #+#    #+#             */
+/*   Updated: 2021/04/24 02:38:21 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-#define PEON_HPP
+#ifndef ASSAULT_TERMINATOR_HPP
+#define ASSAULT_TERMINATOR_HPP
 
-#include "Victim.hpp"
+#include "ISpaceMarine.hpp"
 #include <string>
 
-class Peon : public Victim
+class AssaultTerminator : public ISpaceMarine
 {
+private:
+	std::string	name;
 public:
-	Peon();
-	Peon(const std::string &name);
-	Peon(const Peon &obj);
-	virtual ~Peon();
-	Peon			&operator=(const Peon &right);
-	virtual void	getPolymorphed() const;
+	AssaultTerminator();
+	AssaultTerminator(const AssaultTerminator &obj);
+	~AssaultTerminator();
+	AssaultTerminator	&operator=(const AssaultTerminator &right);
+	ISpaceMarine	*clone() const;
+	void			battleCry() const;
+	void			rangedAttack() const;
+	void			meleeAttack() const;
 };
 
 #endif
