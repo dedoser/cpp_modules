@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/26 01:00:07 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/27 19:39:08 by fignigno         ###   ########.fr       */
+/*   Created: 2021/04/27 20:43:22 by fignigno          #+#    #+#             */
+/*   Updated: 2021/04/27 20:51:36 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-#define ICHARACTER_HPP
+#include "Bureaucrat.hpp"
+#include <iostream>
 
-#include <string>
-#include "AMateria.hpp"
-
-class AMateria;
-
-class ICharacter
+int main()
 {
-public:
-	virtual ~ICharacter() {}
-	virtual const std::string	&getName() const = 0;
-	virtual void				equip(AMateria *m) = 0;
-	virtual void				unequip(int idx) = 0;
-	virtual void				use(int idx, ICharacter &target) = 0;
-};
-
-#endif
+	Bureaucrat a1(1, "Bob");
+	Bureaucrat a2(150, "Max");
+	try
+	{	
+		//Bureaucrat t1(0, "qwe");
+		//Bureaucrat t2(151, "qwe");
+		// a1.incGrade();
+		a2.decGrade();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << a1 << a2;
+}
