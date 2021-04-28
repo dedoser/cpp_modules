@@ -6,7 +6,7 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 20:20:48 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/28 17:03:24 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/04/28 20:52:52 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ private:
 public:
 	Bureaucrat();
 	~Bureaucrat(){}
-	Bureaucrat(int grade, const std::string &name);
+	Bureaucrat(const std::string &name, int grade);
 	Bureaucrat(const Bureaucrat &obj);
 	Bureaucrat	&operator=(const Bureaucrat &right);
 	int					getGrade() const;
@@ -36,6 +36,7 @@ public:
 	void				decGrade();
 	void				incGrade();
 	void				signForm(Form &form);
+	void				executeForm(const Form &form);
 	class GradeTooLowException : public std::exception
 	{
 	public:
