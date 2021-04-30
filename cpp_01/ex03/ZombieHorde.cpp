@@ -6,7 +6,7 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 19:41:24 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/20 20:09:23 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/04/30 14:36:15 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ std::string		nameRandom()
 
 ZombieHorde::ZombieHorde(int n)
 {
+	srand(time(NULL));
 	if (n <= 0)
 	{
 		std::cout << "Can't create " << n << " zombies\n";
@@ -31,7 +32,6 @@ ZombieHorde::ZombieHorde(int n)
 	}
 	this->n = n;
 	this->horde = new Zombie[n];
-	srand(time(NULL));
 	for (int i = 0; i < n; ++i)
 		this->horde[i].setName(nameRandom());
 }

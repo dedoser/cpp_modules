@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Converter.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/28 21:30:39 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/30 19:34:55 by fignigno         ###   ########.fr       */
+/*   Created: 2021/04/30 16:48:06 by fignigno          #+#    #+#             */
+/*   Updated: 2021/04/30 19:36:54 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include "Converter.hpp"
+#pragma once
 
-int	main(int argc, char **argv)
+#include <string>
+
+class Converter
 {
-	Converter conv(argv[1]);
-	conv.convertAll();
-}
+private:
+	double	value;
+	int		len;
+	bool	isNan;
+	bool	isInfPos;
+	bool	isInfNeg;
+	bool	isFloat;
+	bool	isZeroAfterDot;
+public:
+	Converter(const std::string &arg);
+	~Converter();
+	void	convertInt();
+	void	convertFloat();
+	void	convertDouble();
+	void	convertChar();
+	void	convertAll();
+};

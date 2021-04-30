@@ -6,7 +6,7 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 15:03:05 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/21 16:16:50 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/04/30 15:11:39 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,11 @@ std::string	replaceStrings
 	size_t	i;
 
 	i = 0;
+	if (s1 == s2)
+		return (str);
 	while (i != str.npos)
 	{
-		i = str.find(s1, i);
+		i = str.find(s1);
 		if (i != str.npos)
 			str.replace(i, s2.length(), s2);
 	}
@@ -60,11 +62,12 @@ void	Replace::changeStringInFile()
 
 	if (!this->is_ok)
 		return ;
+	this->out << "";
 	while (std::getline(file, str))
 	{
-		out << replaceStrings(str, this->s1, this->s2);
+		this->out << replaceStrings(str, this->s1, this->s2);
 		if (!file.eof())
-			out << "\n";
+			this->out << "\n";
 	}
 }
 
