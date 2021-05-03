@@ -6,7 +6,7 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 16:50:42 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/30 19:38:04 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/05/03 23:26:17 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ void	Converter::convertChar()
 	char	c = static_cast<char>(this->value);
 
 	std::cout << "char: ";
-	if (this->value < 0 || this->isInfNeg || this->isInfPos || this->isNan)
+	if (this->value < 0 || this->value > 255
+		|| this->isInfNeg || this->isInfPos || this->isNan)
 		std::cout << "impossible\n";
 	else if (isprint(c))
 		std::cout << c << std::endl;
