@@ -6,18 +6,12 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/24 00:33:34 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/24 02:45:28 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/05/10 20:41:34 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Lemon.hpp"
 #include <iostream>
-
-Lemon::Lemon() :
-	Victim()
-{
-	std::cout << "Squish\n";
-}
 
 Lemon::Lemon(const std::string &name) :
 	Victim(name)
@@ -25,9 +19,9 @@ Lemon::Lemon(const std::string &name) :
 	std::cout << "SQUIIIISH\n";
 }
 
-Lemon::Lemon(const Lemon &obj)
+Lemon::Lemon(const Lemon &obj) :
+	Victim(obj)
 {
-	*this = obj;
 }
 
 Lemon::~Lemon()

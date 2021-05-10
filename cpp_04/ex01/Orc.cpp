@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.hpp                                          :+:      :+:    :+:   */
+/*   Orc.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/23 18:04:45 by fignigno          #+#    #+#             */
-/*   Updated: 2021/05/10 20:51:17 by fignigno         ###   ########.fr       */
+/*   Created: 2021/05/10 20:53:19 by fignigno          #+#    #+#             */
+/*   Updated: 2021/05/10 20:59:04 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_HPP
-#define ENEMY_HPP
+#include "Orc.hpp"
 
-#include <string>
-
-class Enemy
+Orc::Orc() :
+	Enemy(20, "Orc")
 {
-private:
-	int			hp;
-	std::string	type;
-public:
-	Enemy(int hp, const std::string &type);
-	Enemy(const Enemy &obj);
-	virtual ~Enemy();
-	Enemy				&operator=(const Enemy &right);
-	const std::string	&getType() const;
-	int					getHP() const;
-	virtual void		takeDamage(int damage);
-};
+}
 
-#endif
+Orc::Orc(const Orc &obj) :
+	Enemy(obj)
+{
+}
+
+Orc::~Orc()
+{
+}
+
+Orc	&Orc::operator=(const Orc &right)
+{
+	Enemy::operator=(right);
+	return (*this);
+}
+
+void	Orc::takeDamage(int damage)
+{
+	Enemy::takeDamage(damage - 1);
+}

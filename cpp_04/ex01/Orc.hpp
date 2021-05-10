@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AWeapon.hpp                                        :+:      :+:    :+:   */
+/*   Orc.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/23 16:37:20 by fignigno          #+#    #+#             */
-/*   Updated: 2021/05/10 14:58:57 by fignigno         ###   ########.fr       */
+/*   Created: 2021/05/10 20:49:41 by fignigno          #+#    #+#             */
+/*   Updated: 2021/05/10 20:58:42 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AWEAPON_HPP
-#define AWEAPON_HPP
+#ifndef ORC_HPP
+#define ORC_HPP
 
+#include "Enemy.hpp"
 #include <string>
 
-class AWeapon
+class Orc : public Enemy
 {
-private:
-	std::string	name;
-	int			apcost;
-	int			damage;
 public:
-	AWeapon(std::string const & name, int apcost, int damage);
-	AWeapon(const AWeapon &obj);
-	virtual	~AWeapon();
-	AWeapon				&operator=(const AWeapon &right);
-	int					getAPCost() const;
-	int					getDamage() const;
-	const std::string	&getName() const;
-	virtual	void		attack() const = 0;
+	Orc();
+	Orc(const Orc &obj);
+	virtual ~Orc();
+	Orc	&operator=(const Orc &right);
+	virtual void	takeDamage(int damage);
 };
 
 #endif

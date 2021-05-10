@@ -6,7 +6,7 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 23:14:03 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/08 01:57:21 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/05/10 16:31:49 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int main()
 	while (1)
 	{
 		std::cout << "Enter command: ";
+		if (std::cin.eof() )
+			break ;
 		std::getline(std::cin, line);
 		if (line == "ADD")
 			phonebook.AddContact();

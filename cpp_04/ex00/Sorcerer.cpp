@@ -6,18 +6,12 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 21:25:40 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/24 02:45:28 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/05/10 20:39:03 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
 #include <iostream>
-
-Sorcerer::Sorcerer() :
-	name(""), title("")
-{
-	std::cout << "Sorcerer withou name and title is born!\n";
-}
 
 Sorcerer::Sorcerer(const std::string &name, const std::string &title) :
 	name(name), title(title)

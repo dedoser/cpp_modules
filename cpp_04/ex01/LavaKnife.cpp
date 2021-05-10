@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.hpp                                          :+:      :+:    :+:   */
+/*   LavaKnife.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/23 18:04:45 by fignigno          #+#    #+#             */
-/*   Updated: 2021/05/10 20:51:17 by fignigno         ###   ########.fr       */
+/*   Created: 2021/05/10 20:45:21 by fignigno          #+#    #+#             */
+/*   Updated: 2021/05/10 20:56:48 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_HPP
-#define ENEMY_HPP
+#include "LavaKnife.hpp"
+#include <iostream>
 
-#include <string>
-
-class Enemy
+LavaKnife::LavaKnife() :
+	AWeapon("Lava knife", 2, 7)
 {
-private:
-	int			hp;
-	std::string	type;
-public:
-	Enemy(int hp, const std::string &type);
-	Enemy(const Enemy &obj);
-	virtual ~Enemy();
-	Enemy				&operator=(const Enemy &right);
-	const std::string	&getType() const;
-	int					getHP() const;
-	virtual void		takeDamage(int damage);
-};
+}
 
-#endif
+LavaKnife::LavaKnife(const LavaKnife &obj) :
+	AWeapon(obj)
+{
+}
+
+LavaKnife::~LavaKnife()
+{
+}
+
+LavaKnife	&LavaKnife::operator=(const LavaKnife &right)
+{
+	AWeapon::operator=(right);
+	return (*this);
+}
+
+void	LavaKnife::attack() const
+{
+	std::cout << "* pih pih pih *\n";
+}

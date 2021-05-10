@@ -6,16 +6,11 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 18:07:20 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/24 00:52:26 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/05/10 20:51:22 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Enemy.hpp"
-
-Enemy::Enemy() :
-	hp(0), type("")
-{
-}
 
 Enemy::Enemy(int hp, const std::string &type) :
 	hp(hp), type(type)

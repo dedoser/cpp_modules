@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AWeapon.hpp                                        :+:      :+:    :+:   */
+/*   LavaKnife.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/23 16:37:20 by fignigno          #+#    #+#             */
-/*   Updated: 2021/05/10 14:58:57 by fignigno         ###   ########.fr       */
+/*   Created: 2021/05/10 20:43:21 by fignigno          #+#    #+#             */
+/*   Updated: 2021/05/10 20:52:14 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AWEAPON_HPP
-#define AWEAPON_HPP
+#ifndef LAVAKNIFE_HPP
+#define LAVAKNIFE_HPP
 
+#include "AWeapon.hpp"
 #include <string>
 
-class AWeapon
+class LavaKnife : public AWeapon
 {
-private:
-	std::string	name;
-	int			apcost;
-	int			damage;
 public:
-	AWeapon(std::string const & name, int apcost, int damage);
-	AWeapon(const AWeapon &obj);
-	virtual	~AWeapon();
-	AWeapon				&operator=(const AWeapon &right);
-	int					getAPCost() const;
-	int					getDamage() const;
-	const std::string	&getName() const;
-	virtual	void		attack() const = 0;
+	LavaKnife();
+	LavaKnife(const LavaKnife &obj);
+	virtual ~LavaKnife();
+	LavaKnife	&operator=(const LavaKnife &right);
+	virtual void	attack() const;
 };
 
 #endif

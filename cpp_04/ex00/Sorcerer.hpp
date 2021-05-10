@@ -6,7 +6,7 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 21:23:38 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/24 00:27:55 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/05/10 20:39:05 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ private:
 	std::string	name;
 	std::string	title;
 public:
-	Sorcerer();
 	Sorcerer(const std::string &name, const std::string &title);
 	Sorcerer(const Sorcerer &obj);
 	~Sorcerer();

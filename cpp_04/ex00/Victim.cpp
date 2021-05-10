@@ -6,18 +6,12 @@
 /*   By: fignigno <fignigno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/22 21:37:11 by fignigno          #+#    #+#             */
-/*   Updated: 2021/04/24 02:45:28 by fignigno         ###   ########.fr       */
+/*   Updated: 2021/05/10 20:39:50 by fignigno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Victim.hpp"
 #include <iostream>
-
-Victim::Victim() :
-	name("")
-{
-	std::cout << "Some random victim without name just appeared!\n";
-}
 
 Victim::Victim(const std::string &name) :
 	name(name)
